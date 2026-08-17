@@ -82,10 +82,19 @@ body.light {
 
 html {
     scroll-behavior: smooth;
+
+    overflow-x: hidden;
+
+    max-width: 100%;
 }
 
 body {
     margin: 0;
+
+    overflow-x: hidden;
+
+    max-width: 100%;
+
     background:
         radial-gradient(
             circle at 75% 0%,
@@ -1476,6 +1485,8 @@ li::marker {
 
     gap: 20px;
 
+    min-height: 66px;
+
     padding:
         17px
         20px;
@@ -1493,6 +1504,12 @@ li::marker {
     transition:
         transform 0.2s ease,
         border-color 0.2s ease;
+}
+
+.artifact > div:first-child {
+    min-width: 0;
+
+    flex: 1;
 }
 
 .artifact:hover {
@@ -1518,6 +1535,12 @@ li::marker {
     font-size: 0.72rem;
 
     margin-top: 2px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 }
 
 .artifact-arrow {
