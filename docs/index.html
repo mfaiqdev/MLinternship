@@ -312,6 +312,76 @@ a:hover {
 }
 
 /* =========================================================
+   SECTION NAV (jump links)
+========================================================= */
+
+.section-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding:
+        0
+        clamp(20px, 4vw, 42px)
+        14px;
+
+    scrollbar-width: thin;
+}
+
+.section-nav::-webkit-scrollbar {
+    height: 4px;
+}
+
+.section-nav a {
+    flex: none;
+
+    padding:
+        7px
+        13px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 999px;
+
+    background: var(--surface);
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.section-nav a:hover {
+    border-color: var(--line-strong);
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
    LAYOUT
 ========================================================= */
 
@@ -1780,6 +1850,25 @@ footer {
 
     </div>
 
+
+    <!-- SECTION NAV: jump links to every section -->
+
+    <nav
+        class="section-nav"
+        aria-label="Section navigation">
+
+        <a href="#abstract">Abstract</a>
+        <a href="#introduction">Introduction</a>
+        <a href="#data">Data</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#results">Results</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#recommendations">Recommendations</a>
+        <a href="#reproducibility">Reproducibility</a>
+        <a href="#acknowledgments">Acknowledgments</a>
+
+    </nav>
+
 </div>
 
 
@@ -1819,6 +1908,10 @@ footer {
 
 
     <div class="hero-meta">
+
+        <span class="meta-pill">
+            By Muhammad Faiq
+        </span>
 
         <span class="meta-pill">
             March 2026 development window
@@ -3424,6 +3517,25 @@ refresh_label =
     </p>
 
 
+    <p>
+
+        <strong>Week 7 — Action Playbook</strong>
+        (notebook <code>Content Action Playbook</code>)
+        operationalized the validated Week-4 baseline into this ranked
+        action queue, applying the primary reason code
+        <code>HIGH_IMPRESSIONS_LOW_CLICKS</code>
+        (<code>gsc_impressions &gt; 100 AND gsc_clicks &lt;= 1</code>)
+        alongside supporting reason codes and performance archetypes.
+        The top-ranked candidates are dominated by
+        <code>HIGH</code> priority items in the
+        <code>HIGH_VISIBILITY_LOW_CLICKS</code> archetype, with priority
+        scores around 1.25 for the highest-ranked examples. These
+        scores rank items for review priority — they are not a
+        probability of refresh success.
+
+    </p>
+
+
     <div class="card">
 
         <!-- 01 -->
@@ -3724,8 +3836,7 @@ refresh_label =
 
         The public repository contains the notebooks and artifacts
         supporting the research progression. The capstone notebook
-        currently provides the structure for the final paper and can
-        be populated further as the research artifact evolves.
+        provides the complete structure for the final paper.
 
     </p>
 
@@ -3736,7 +3847,7 @@ refresh_label =
 
         <a
             class="artifact"
-            href="https://github.com/mfaiqdev/MLinternship/blob/main/work/notebooks/w04_baseline.ipynb"
+            href="https://github.com/mfaiqdev/MLinternship/blob/main/work/notebooks/w04_baseline_score.ipynb"
             target="_blank"
             rel="noopener noreferrer">
 
@@ -3763,7 +3874,7 @@ refresh_label =
 
         <a
             class="artifact"
-            href="https://github.com/mfaiqdev/MLinternship/blob/main/work/notebooks/w05_ml_model.ipynb"
+            href="https://github.com/mfaiqdev/MLinternship/blob/main/work/notebooks/w05_model.ipynb"
             target="_blank"
             rel="noopener noreferrer">
 
@@ -3813,7 +3924,34 @@ refresh_label =
         </a>
 
 
-        <!-- CAPSTONE AFTER 4 → 5 → 6 -->
+        <!-- WEEK 7 FOURTH -->
+
+        <a
+            class="artifact"
+            href="https://github.com/mfaiqdev/MLinternship/blob/main/work/notebooks/w07_action_playbook.ipynb"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div>
+
+                <div class="artifact-name">
+                    Week 7 · Action Playbook
+                </div>
+
+                <div class="artifact-description">
+                    Content Action Playbook: ranked action queue with reason codes and priority scores
+                </div>
+
+            </div>
+
+            <div class="artifact-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <!-- CAPSTONE AFTER 4 → 5 → 6 → 7 -->
 
         <a
             class="artifact"
@@ -3840,7 +3978,7 @@ refresh_label =
         </a>
 
 
-        <!-- REPOSITORY -->
+        <!-- GITHUB REPOSITORY -->
 
         <a
             class="artifact"
@@ -3867,7 +4005,7 @@ refresh_label =
         </a>
 
 
-        <!-- NOTEBOOK DIRECTORY -->
+        <!-- RESEARCH NOTEBOOKS -->
 
         <a
             class="artifact"
@@ -4028,9 +4166,9 @@ refresh_label =
 
     <div class="footer-right">
 
-        Research artifact<br>
+        Muhammad Faiq<br>
 
-        2026
+        Research artifact · 2026
 
     </div>
 
